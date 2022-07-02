@@ -154,7 +154,7 @@ class Item:
         self.context = context
 
 
-class Welcome2:
+class SongAllDetails:
     next: str
     cursors: Cursors
     href: str
@@ -173,3 +173,48 @@ class Welcome2:
         self.previous = previous
         self.total = total
         self.cursors = cursors
+
+
+class TrackDetails:
+    danceability: float
+    energy: float
+    key: int
+    loudness: float
+    mode: int
+    speechiness: float
+    acousticness: float
+    instrumentalness: float
+    liveness: float
+    valence: float
+    tempo: float
+    type: str
+    id: str
+    uri: str
+    track_href: str
+    analysis_url: str
+    duration_ms: int
+    time_signature: int
+
+    def __init__(self, danceability: float, energy: float, key: int, loudness: float, mode: int, speechiness: float, acousticness: float, instrumentalness: float, liveness: float, valence: float, tempo: float, type: str, id: str, uri: str, track_href: str, analysis_url: str, duration_ms: int, time_signature: int) -> None:
+        self.danceability = danceability
+        self.energy = energy
+        self.key = key
+        self.loudness = loudness
+        self.mode = mode
+        self.speechiness = speechiness
+        self.acousticness = acousticness
+        self.instrumentalness = instrumentalness
+        self.liveness = liveness
+        self.valence = valence
+        self.tempo = tempo
+        self.type = type
+        self.id = id
+        self.uri = uri
+        self.track_href = track_href
+        self.analysis_url = analysis_url
+        self.duration_ms = duration_ms
+        self.time_signature = time_signature
+    
+    def getAsDict(self):
+        return {'danceability': self.danceability, 'energy': self.danceability, 'key':self.key,'loudness':self.loudness,'mode':self.mode,'speechiness':self.speechiness,'acousticness':self.acousticness,
+        'instrumentalness':self.instrumentalness,'liveness':self.liveness, 'valence':self.valence,'tempo':self.tempo,'type':self.type,'id':self.id,'uri':self.uri,'duration_ms':self.duration_ms,'time_signature': self.time_signature}
